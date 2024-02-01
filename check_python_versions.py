@@ -4,13 +4,11 @@ from datetime import datetime
 # Manually define the non-EOL Python versions and their EOL dates
 # Update this as new releases come out or old versions reach EOL
 python_versions = {
-    "3.13": "2029-10-01",
-    "3.12": "2028-10-01",
-    "3.11": "2027-10-01",
-    "3.10": "2026-10-01",
-    "3.9": "2025-10-01",
     "3.8": "2024-10-01",
-    # Add or remove versions as needed
+    "3.9": "2025-10-01",
+    "3.10": "2026-10-01",
+    "3.11": "2027-10-01",
+    "3.12": "2028-10-01"
 }
 
 # Get the current date
