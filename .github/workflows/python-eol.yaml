@@ -1,0 +1,24 @@
+name: Update Python Versions
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  update-versions:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Run Python Version Check Script
+      run: python check_python_versions.py
+    - name: Commit and Push if Changes
+      run: |
+        git config --global user.name 'Mike Gray'
+        git config --global user.email 'mike@graywind.org'
+        git add python-versions.json
+        git commit -m "Update Python Versions" || exit 0  # Exit gracefully if no changes
+        git push
